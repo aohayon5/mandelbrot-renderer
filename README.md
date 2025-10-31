@@ -17,7 +17,7 @@ This program renders the Mandelbrot Set to BMP images using multiple threads for
 ## Compilation
 
 ```bash
-gcc -o mandelbrot mandelbrot.c -lpthread -lm -O2
+gcc -o mandelbrot mandelbrot.c -lpthread -lm
 ```
 
 ## Usage
@@ -34,17 +34,12 @@ gcc -o mandelbrot mandelbrot.c -lpthread -lm -O2
 
 ## Examples
 
-**Classic Mandelbrot view:**
+**Classic Mandelbrot view (example1.bmp):**
 ```bash
 ./mandelbrot 800 4 -2.0 -1.5 3.0
 ```
 
-**High-resolution render:**
-```bash
-./mandelbrot 2000 8 -2.0 -1.5 3.0
-```
-
-**Detailed zoom:**
+**Detailed zoom (example2.bmp):**
 ```bash
 ./mandelbrot 1000 200 -0.747 -0.1252 0.003
 ```
@@ -61,11 +56,6 @@ gcc -o mandelbrot mandelbrot.c -lpthread -lm -O2
 - **Condition Variables**: Signal work availability (no busy-waiting)
 - **Semaphore**: Serializes row data array writes
 - **Barriers**: Synchronize threads between rows
-
-### Algorithm
-Unoptimized escape-time algorithm with 255 max iterations:
-- Escaped pixels: luminosity = 255 - iteration_count
-- Non-escaped pixels: luminosity = 0 (black)
 
 ## Output
 
