@@ -2,8 +2,6 @@
 
 A parallel implementation of the Mandelbrot Set renderer in C using POSIX threads, demonstrating producer-consumer patterns with mutexes, semaphores, and barriers.
 
-![Sample Mandelbrot Output](examples/example1.bmp)
-
 ## Overview
 
 This program renders the Mandelbrot Set to BMP images using multiple threads for parallel computation. Column threads (producers) generate coordinates in the complex plane, while engine threads (consumers) calculate pixel values using the escape-time algorithm.
@@ -38,11 +36,13 @@ gcc -o mandelbrot mandelbrot.c -lpthread -lm
 ```bash
 ./mandelbrot 800 4 -2.0 -1.5 3.0
 ```
+![Sample Mandelbrot Output](examples/example1.png)
 
 **Detailed zoom (example2.bmp):**
 ```bash
 ./mandelbrot 1000 200 -0.747 -0.1252 0.003
 ```
+![Detailed Zoom](examples/example2.png)
 
 ## Technical Details
 
