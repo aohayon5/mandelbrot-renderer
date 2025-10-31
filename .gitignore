@@ -1,0 +1,8 @@
+# Compiled files
+*.o
+mandelbrot
+*.out
+
+# Editor files
+*.swp
+*~
